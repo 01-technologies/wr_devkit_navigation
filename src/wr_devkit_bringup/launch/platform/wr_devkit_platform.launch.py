@@ -167,23 +167,21 @@ def generate_launch_description():
                 ])
             ]),
         ),
-        """
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([
-                PathJoinSubstitution([
-                    FindPackageShare("vision_sensor_kit_bringup"),
-                    "launch",
-                    "sensor_kit.launch.py",
-                ])
-            ]),
-            launch_arguments={
-                "front_camera": front_camera,
-                "rear_camera": rear_camera,
-                "left_camera": left_camera,
-                "right_camera": right_camera
-            }.items(),
-        ),
-        """
+        # IncludeLaunchDescription(
+        #    PythonLaunchDescriptionSource([
+        #        PathJoinSubstitution([
+        #            FindPackageShare("vision_sensor_kit_bringup"),
+        #            "launch",
+        #            "sensor_kit.launch.py",
+        #        ])
+        #    ]),
+        #    launch_arguments={
+        #        "front_camera": front_camera,
+        #        "rear_camera": rear_camera,
+        #        "left_camera": left_camera,
+        #        "right_camera": right_camera
+        #    }.items(),
+        # ),
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 PathJoinSubstitution([
