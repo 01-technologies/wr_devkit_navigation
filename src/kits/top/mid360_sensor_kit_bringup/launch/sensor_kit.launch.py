@@ -84,20 +84,21 @@ def generate_launch_description():
     )
 
     # --------- Drivers ---------
-    imu_bringup = GroupAction([
-        Node(
-            package="wrp_ros2",
-            name="ch104m_imu_sensor_node",
-            executable="imu_sensor_node",
-            output="screen",
-            parameters=[
-                PathJoinSubstitution([
-                    FindPackageShare('mid360_sensor_kit_bringup'),
-                    'config',
-                    'hipnuc.param.yaml'])
-            ],
-        )
-    ])
+
+    #imu_bringup = GroupAction([
+    #    Node(
+    #        package="wrp_ros2",
+    #        name="ch104m_imu_sensor_node",
+    #        executable="imu_sensor_node",
+    #        output="screen",
+    #        parameters=[
+    #            PathJoinSubstitution([
+    #                FindPackageShare('mid360_sensor_kit_bringup'),
+    #                'config',
+    #                'hipnuc.param.yaml'])
+    #        ],
+    #    )
+    #])
 
     user_config_path = PathJoinSubstitution([
         FindPackageShare('mid360_sensor_kit_bringup'),
