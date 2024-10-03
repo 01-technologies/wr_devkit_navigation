@@ -58,7 +58,7 @@ def generate_launch_description():
             "-configuration_basename",
             config,
         ],
-        remappings=[("/imu", "/ch104m_imu_sensor_node/imu")]
+        remappings=[("/imu", "/livox/imu")]
     )
 
     cartographer_occupancy_grid_node = Node(
