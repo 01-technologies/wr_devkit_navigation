@@ -167,6 +167,7 @@ def generate_launch_description():
                 ])
             ]),
         ),
+        """
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 PathJoinSubstitution([
@@ -182,6 +183,7 @@ def generate_launch_description():
                 "right_camera": right_camera
             }.items(),
         ),
+        """
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([
                 PathJoinSubstitution([
