@@ -26,7 +26,7 @@ Below is the typical workflow to bring up the robot and run some sample applicat
 
   The platform bringup launch file initializes the robot hardware and required ROS2 nodes. It is a prerequisite for running the other applications.
   ```bash
-    $ ros2 launch wr_devkit_bringup wr_devkit_platform.launch.py robot_model:=ranger_mini_v2
+    $ ros2 launch wr_devkit_bringup wr_devkit_platform.launch.py robot_model:=scout_mini
   ```
 
 ## Mapping
@@ -64,7 +64,7 @@ Below is the typical workflow to bring up the robot and run some sample applicat
 ### If you are using Cartographer SLAM:
   * Launch Nav2 with your map
     ```bash
-      $ ros2 launch wr_devkit_bringup wr_devkit_nav2.launch.py robot_param:=nav2_ranger_mini.param.yaml map:=<your_map_yaml>
+      $ ros2 launch wr_devkit_bringup wr_devkit_nav2.launch.py robot_param:=nav2_scout_mini.param.yaml map:=<your_map_yaml>
     ```
   > **Note:** Replace `<your_map_yaml>` with the path to the map file you saved earlier.
 ### If you are using RTAB-Map:
