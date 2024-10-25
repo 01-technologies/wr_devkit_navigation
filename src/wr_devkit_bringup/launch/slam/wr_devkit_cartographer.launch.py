@@ -36,7 +36,7 @@ def generate_launch_description():
 
     declare_resolution_arg = DeclareLaunchArgument(
         "resolution",
-        default_value="0.05",
+        default_value="0.02",
         description="Resolution of the map",
     )
 
