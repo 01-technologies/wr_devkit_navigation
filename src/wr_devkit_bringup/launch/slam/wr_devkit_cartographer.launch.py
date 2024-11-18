@@ -47,18 +47,19 @@ def generate_launch_description():
     )
 
     cartographer_node = Node(
-        package="cartographer_ros",
-        executable="cartographer_node",
-        name="cartographer_node",
-        output="screen",
-        parameters=[{"use_sim_time": use_sim_time}],
+        package='cartographer_ros',
+        executable='cartographer_node',
+        output='screen',
+        parameters=[{'use_sim_time': use_sim_time}],
         arguments=[
-            "-configuration_directory",
-            LaunchConfiguration("config_path"),
-            "-configuration_basename",
+            '-configuration_directory',
+            LaunchConfiguration('config_path'),
+            '-configuration_basename',
             config,
         ],
-        remappings=[("/imu", "/livox/imu")]
+        remappings=[
+        	('/imu', '/livox/imu'),
+        ]
     )
 
     cartographer_occupancy_grid_node = Node(
