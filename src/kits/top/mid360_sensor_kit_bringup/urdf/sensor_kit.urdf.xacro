@@ -69,9 +69,15 @@
     </collision>
   </link>
 
-  <joint name="ch104m_imu_joint" type="fixed">
+  <!-- <joint name="ch104m_imu_joint" type="fixed">
     <origin xyz="0.035 0.0 0.03" rpy="0 0 ${M_PI/2}" />
     <parent link="mid360_sensor_kit_base_link" />
+    <child link="ch104m_imu_frame" />
+  </joint> -->
+  
+  <joint name="ch104m_imu_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
+    <parent link="livox_frame" />
     <child link="ch104m_imu_frame" />
   </joint>
 
