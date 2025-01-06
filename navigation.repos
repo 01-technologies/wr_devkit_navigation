@@ -11,7 +11,3 @@ repositories:
     type: git
     url: https://github.com/westonrobot/ugv_sdk.git
     version: 012a9aa02436ffe2ef66f211dd193be7b69902ba
-  mrivers/usb_cam:
-    type: git
-    url: https://github.com/ros-drivers/usb_cam.git
-    version: 52dd75fb78ae608a2c40eea60f6e8eac673b91e8
