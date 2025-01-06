@@ -182,19 +182,19 @@ def generate_launch_description():
         #        "right_camera": right_camera
         #    }.items(),
         # ),
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource([
-                PathJoinSubstitution([
-                    FindPackageShare("w200d_sensor_kit_bringup"),
-                    "launch",
-                    "sensor_kit.launch.py",
-                ])
-            ]),
-            condition=IfCondition(PythonExpression(["'", robot_model, "' == 'ranger_mini_v2'"])),
-            launch_arguments={
-                "robot_base": "ranger_mini",
-            }.items(),
-        ),
+        # IncludeLaunchDescription(
+        #    PythonLaunchDescriptionSource([
+        #        PathJoinSubstitution([
+        #            FindPackageShare("w200d_sensor_kit_bringup"),
+        #            "launch",
+        #            "sensor_kit.launch.py",
+        #        ])
+        #    ]),
+        #    condition=IfCondition(PythonExpression(["'", robot_model, "' == 'ranger_mini_v2'"])),
+        #    launch_arguments={
+        #        "robot_base": "ranger_mini",
+        #    }.items(),
+        # ),
         
     ])
 

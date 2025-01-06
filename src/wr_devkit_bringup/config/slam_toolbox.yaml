@@ -1,0 +1,81 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: True  # Whether to use simulation time (Gazebo)
+    
+    # Whether to use the online asynchronous or synchronous SLAM node
+    mode: "online_async"  # "online_sync" can be used for synchronized mapping
+
+    # General SLAM parameters
+    map_file_name: ""  # Leave empty for mapping from scratch, set if using preloaded map
+    resolution: 0.05  # Resolution of the grid map (meters per cell)
+    publish_frame: "map"  # Frame of the published map
+    use_pose_graph: true  # Whether to use pose graph optimization
+
+    # LIDAR scan parameters
+    laser_min_range: 0.05  # Minimum range of LIDAR
+    laser_max_range: 10.0  # Maximum range of LIDAR
+    scan_topic: "/scan"  # Topic for the laser scan
+
+    # Pose graph configuration
+    pose_graph_save_period: 30  # How often to save the pose graph (seconds)
+    map_update_interval: 2.0  # Frequency of updating the map in seconds
+    max_laser_range: 10.0  # Max laser range for scan matching
+    minimum_travel_distance: 0.1  # Distance threshold to trigger pose graph update
+    minimum_travel_heading: 0.1  # Heading threshold to trigger pose graph update
+    laser_scan_max_range: 10.0  # Max laser scan range considered
+
+    # Map publishing configuration
+    map_publish_period: 1.0  # Frequency of publishing the map (in seconds)
+    pose_publish_period: 2.0  # Frequency of publishing the pose (in seconds)
+
+    # Real-time correlative scan matching parameters
+    real_time_correlative_scan_matching: true  # Enable real-time scan matching
+    correlative_scan_matching.linear_search_window: 0.1  # Linear search window
+    correlative_scan_matching.angular_search_window: 0.1  # Angular search window
+    correlative_scan_matching.translation_weight: 0.5  # Weight for translational components
+    correlative_scan_matching.rotation_weight: 0.5  # Weight for rotational components
+
+    # Loop closure and optimization
+    loop_closure_enabled: true  # Enable loop closure detection
+    pose_graph.constraint_builder.min_score: 0.55  # Minimum score for adding a constraint
+    pose_graph.constraint_builder.global_localization_min_score: 0.6  # Min score for global localization
+    optimization_period: 10.0  # Time interval to perform graph optimization
+
+    # Optimization problem (Ceres solver)
+    ceres_solver_options:
+      max_num_iterations: 50  # Number of iterations for optimization
+      num_threads: 4  # Number of threads used for optimization
+
+    # Pose graph constraints
+    pose_graph.constraint_builder.sampling_ratio: 0.3  # Sampling ratio for constraints
+    pose_graph.constraint_builder.max_constraint_distance: 15.0  # Max distance for constraints
+    pose_graph.optimization_problem.log_solver_summary: false  # Log solver details
+    pose_graph.optimization_problem.huber_scale: 1e2  # Robust loss function scale
+
+    # Map saver parameters
+    map_saver:
+      save_map_timeout: 5.0  # Timeout for saving the map
+      free_thresh_default: 0.25  # Free space threshold for occupancy
+      occupied_thresh_default: 0.65  # Occupied space threshold
+
+    # Relocalization parameters (if using relocalization mode)
+    relocalization_mode: true  # Enable relocalization
+
+    # Optional - If you have IMU data
+    use_imu: false  # If using IMU data
+
+    # Optional - Initial pose for relocalization
+    initial_pose_x: 0.0  # Initial x position for the robot
+    initial_pose_y: 0.0  # Initial y position for the robot
+    initial_pose_a: 0.0  # Initial angle (in radians) for the robot
+
+    # Optional - Odom integration
+    use_odometry: true  # Use odometry data for improving SLAM accuracy
+    odom_topic: "/odom"  # Topic for odometry data
+
+    # Optional - Landmark support
+    use_landmarks: false  # If using landmark-based localization (not common in 2D SLAM)
+
+    # Optional - Serialization and debugging
+    serialization_dir: ""  # Directory to store serialized SLAM graphs
+    map_save_frequency: 0.0  # Frequency to auto-save maps (0 to disable auto-save)
